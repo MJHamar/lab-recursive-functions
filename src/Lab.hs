@@ -20,7 +20,9 @@ elem _ [] = False
 elem a (x:xs) = a == x || elem a xs
 
 intersperse :: a -> [a] -> [a]
-intersperse [] = 
+intersperse sep [] = []
+intersperse sep [x] = [x]
+intersperse sep (x:y:xs) = x : sep : intersperse sep (y:xs)
 
 subsequences :: [a] -> [[a]]
 subsequences = undefined
