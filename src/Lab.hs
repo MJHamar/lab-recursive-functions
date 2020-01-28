@@ -26,8 +26,6 @@ intersperse sep (x:y:xs) = x : sep : intersperse sep (y:xs)
 
 subsequences :: [a] -> [[a]]
 subsequences [] = [[]]
-subsequences (x:xs) = [firstN (x:xs) n | n <- [0..(length (x:xs))]]
-  where firstN :: [a] -> b -> [a]
-    firstN  = 
+subsequences (x:xs) =
 
 --------------------------------------------------------------------------------
