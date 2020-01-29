@@ -32,7 +32,8 @@ subsequences (x:xs) = ys ++ map (x:) ys
 
 maximum :: Ord a => [a] -> a
 maximum [x] = x
-maximum (x:xs) = if (x > maximum xs) then x else maximum xs
+maximum (x:xs) = max x z
+  where z = maximum xs
 
 
 --------------------------------------------------------------------------------
