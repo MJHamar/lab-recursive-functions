@@ -26,6 +26,13 @@ intersperse sep (x:y:xs) = x : sep : intersperse sep (y:xs)
 
 subsequences :: [a] -> [[a]]
 subsequences [] = [[]]
-subsequences (x:xs) =
+subsequences (x:xs) = ys ++ map (x:) ys
+    where ys = subsequences xs
+
+
+maximum :: Ord a => [a] -> a
+maximum [x] = x
+maximum (x:xs) = if (x > maximum xs) then x else maximum xs
+
 
 --------------------------------------------------------------------------------
